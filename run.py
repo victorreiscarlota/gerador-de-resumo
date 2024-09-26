@@ -239,7 +239,7 @@ pdf.output(output_pdf_full_path)
 markdown_content = full_content.replace("Aula", "## Aula").replace("-", "------").replace("\n\n", "\n\n\n")
 
 
-output_md_full_path = "RESUMO.md"
+output_md_full_path = "README.md"
 with open(output_md_full_path, "w", encoding="utf-8") as readme_file:
     readme_file.write(markdown_content)
 
