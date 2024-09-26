@@ -1,6 +1,4 @@
-from fpdf import FPDF
 
-full_content = """
 
 Aula 01: Introdução às Redes de Computadores
 --------------------------------------------
@@ -217,30 +215,3 @@ Se for POP3, o e-mail é baixado para o dispositivo do destinatário e removido 
 Se for IMAP, o e-mail é acessado diretamente no servidor e sincronizado entre todos os dispositivos conectados.
 
 
-"""
-
-
-output_txt_full_path = "TXT/Resumos_Redes_Computadores3.txt"
-with open(output_txt_full_path, "w", encoding="utf-8") as file:
-    file.write(full_content)
-
-
-pdf = FPDF()
-pdf.add_page()
-pdf.set_font("Arial", size=12)
-
-for line in full_content.split('\n'):
-    pdf.multi_cell(0, 10, line)
-
-output_pdf_full_path = "PDF/Resumos_Redes_Computadores3.pdf"
-pdf.output(output_pdf_full_path)
-
-
-markdown_content = full_content.replace("Aula", "## Aula").replace("-", "------").replace("\n\n", "\n\n\n")
-
-
-output_md_full_path = "RESUMO.md"
-with open(output_md_full_path, "w", encoding="utf-8") as readme_file:
-    readme_file.write(markdown_content)
-
-print("Arquivos .txt, .pdf e RESUMO.md gerados com sucesso no diretório!")
